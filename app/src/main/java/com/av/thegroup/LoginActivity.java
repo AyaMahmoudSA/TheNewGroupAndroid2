@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         contextOfApplication=getApplicationContext();
-        ParseUtilites.ParseStockDate(1);
         txt_InverstorNo=(EditText)findViewById(R.id.txt_InverstorNo);
         txt_Password=(EditText)findViewById(R.id.txt_Password);
 

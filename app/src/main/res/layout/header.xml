@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
+
     >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,6 +19,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/company_name"
             android:id="@+id/txt_company"
+
             android:textColor="@color/color_itemtext"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"

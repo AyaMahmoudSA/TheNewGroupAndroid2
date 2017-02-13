@@ -23,6 +23,7 @@ import org.json.JSONObject;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -46,6 +47,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Models.AllStockData;
 import StoreData.StoreData;
 
 /**
@@ -121,35 +123,68 @@ public class ParseUtilites  {
 
     }
 
-public static JSONObject ParseStockDate(int type){
-
-  //  type =1;
+public static ArrayList<AllStockData> ParseStockDate(int type){
+    ArrayList<AllStockData>  allStockDataArrayList=new ArrayList<>();
     try {
-    JSONParser jsonParser=new JSONParser();
-    String StockData=jsonParser.getStringFromUrl(CommonVars.URL_StockData+ type);
-
+    JSONParser jsonParser=new JSONParser(); // TODO: use JSONParser to get data and cast as Json to make easy used .
+    String StockData=jsonParser.getStringFromUrl(CommonVars.URL_StockData + type); // TODO: had to use getStringFromUrl because data is string
+// 1 : Preferred  2:Active 3:Gainers  4:Losers
+        //TODO: First create My Arraylist with same size from url and give name in same size size is  14
+        //ToDO: and split ";" from my arrray and put in anthore array to be ["Symbol",.......]"
     String keyList = "Symbol;NameEn;NameAr;SellPrice;BuyPrice;CurrentPrice;NoOfTrades;TradeValue;TradeVolume;HighPrice;LowPrice;ChangePercentage;ChangeValue;ChangeSign";
     String [] KeyArrayList=keyList.split(";");
-
+      //TODO : To Divide array by line by line split with \n to became array of lines "ex : 45" Lines
     String [] StockDataArray=StockData.split("\n");
 
-     JSONObject JParse_Data=new JSONObject();
-     JSONArray  array_stock=new JSONArray();
-     JSONObject Stock_Data=new JSONObject();
-
-
+     JSONArray  array_stock=new JSONArray(); // ToDO: to add my array in JsonArrat=y
     for(int i=1;i<StockDataArray.length;i++){
+        //should be here to add all data put outside that loop will show just last array size
+        JSONObject JParse_Data=new JSONObject(); //ToDo :Parse Data line by line and put with string in same size of My Array create
+        String [] get_StockDataArray=StockDataArray[i].split(";"); //get
+            if(KeyArrayList.length==get_StockDataArray.length){
 
-        String [] get_StockDataArray=StockDataArray[i].split(";");
-        if(KeyArrayList.length==get_StockDataArray.length){
-                JParse_Data.put(KeyArrayList[i],get_StockDataArray[i]);
+                for(int j=0;j<get_StockDataArray.length;j++){
+
+
+                JParse_Data.put(KeyArrayList[j],get_StockDataArray[j]);
+            }
+
         }
-    }
 
         array_stock.put(JParse_Data);
+
+    }
+        JSONObject Stock_Data=new JSONObject();
+
         Stock_Data.put("Stocks",array_stock);
 
+
         if(Stock_Data!=null){
+	    Log.d("stocks: ", "---------------" + Stock_Data);
+         JSONArray Stocks =Stock_Data.getJSONArray("Stocks");
+            for(int k=0;k<Stocks.length();k++){
+                 JSONObject stocks=Stocks.getJSONObject(k);
+                AllStockData map_allStockData=new AllStockData();
+
+         /* //1 */     map_allStockData.setCompanySymbol(stocks.getString("Symbol"));
+         /* //2 */     map_allStockData.setCompanyEn(stocks.getString("NameEn"));
+         /* //3 */     map_allStockData.setCompanyAr(stocks.getString("NameAr"));
+         /* //4 */     map_allStockData.setSellPrice(stocks.getString("SellPrice"));
+         /* //5 */     map_allStockData.setBuyPrice(stocks.getString("BuyPrice"));
+         /* //6 */     map_allStockData.setCurrentPrice(stocks.getString("CurrentPrice"));
+         /* //7 */     map_allStockData.setNoOfTrades(stocks.getString("NoOfTrades"));
+         /* //8 */     map_allStockData.setTradeValue(stocks.getString("TradeValue"));
+         /* //9 */     map_allStockData.setTradeVolume(stocks.getString("TradeVolume"));
+         /* //10 */    map_allStockData.setHighPrice(stocks.getString("HighPrice"));
+         /* //11 */    map_allStockData.setLowPrice(stocks.getString("LowPrice"));
+         /* //12 */    map_allStockData.setChangePercentage(stocks.getString("ChangePercentage"));
+         /* //13 */    map_allStockData.setChangeValue(stocks.getString("ChangeValue"));
+         /* //14 */    map_allStockData.setChangeSign(stocks.getString("ChangeSign"));
+
+                       allStockDataArrayList.add(map_allStockData);
+
+            }
+
 
 
         }
@@ -169,7 +204,7 @@ public static JSONObject ParseStockDate(int type){
 
 
 
-    return  null;
+    return allStockDataArrayList ;
 }
 
 

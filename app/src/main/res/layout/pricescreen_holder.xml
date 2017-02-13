@@ -3,4 +3,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        >
+
+        <TextView
+            style="@style/CustomheaderText"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/company_name"
+            android:maxLines="2"
+            android:id="@+id/txt_company"
+            android:textColor="@color/text_black"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="7dp"
+
+            />
+
+        <TextView
+            style="@style/CustomheaderText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/value"
+            android:maxLines="2"
+            android:id="@+id/txt_valuepercentage"
+            android:layout_marginLeft="30dp"
+            android:layout_alignTop="@+id/txt_company"
+            android:layout_toRightOf="@+id/txt_company"
+            android:layout_toEndOf="@+id/txt_company"
+            android:textColor="@color/text_black"/>
+
+        <TextView
+            style="@style/CustomheaderText"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/bid"
+            android:id="@+id/txt_bid"
+            android:layout_alignTop="@+id/txt_valuepercentage"
+            android:layout_toRightOf="@+id/txt_valuepercentage"
+            android:layout_toEndOf="@+id/txt_valuepercentage"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/text_black"/>
+
+        <TextView
+            style="@style/CustomheaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/offer"
+            android:id="@+id/txt_offer"
+            android:layout_alignTop="@+id/txt_bid"
+            android:layout_toRightOf="@+id/txt_bid"
+            android:layout_toEndOf="@+id/txt_bid"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/text_black"/>
+
+        <TextView
+            style="@style/CustomheaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/current"
+            android:id="@+id/txt_current"
+            android:layout_alignTop="@+id/txt_offer"
+            android:layout_toRightOf="@+id/txt_offer"
+            android:layout_toEndOf="@+id/txt_offer"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/text_black"/>
+    </RelativeLayout>
+
+
+
 </LinearLayout>

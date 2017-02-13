@@ -54,23 +54,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         GAINERS=(Button)findViewById(R.id.btn_gainers);
         LOSERS=(Button)findViewById(R.id.btn_losers);
 
-        percentage_value=(TextView)findViewById(R.id.txt_valuepercentage);
-
-        percentage_value.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(tag_valuepercentage==0){
-                    percentage_value.setText("Value");
-                    tag_valuepercentage=1;
-                }else{
-                    percentage_value.setText("%");
-
-                    tag_valuepercentage=0;
-
-                }
-            }
-        });
-
 
         PERFERRED.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +131,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void onClick(View view) {
 
         if (view == itempricescreen){
-         //   changeFragment(new HomeFragment());
+            changeFragment(new PerferredFragment());
         }else if (view == itemmarketDetails){
             // changeFragment(new ProfileFragment());
         }else if (view == itemorders){

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#ff891a38</color>
     <color name="colorPrimaryDark">#ff891a38</color>
     <color name="colorAccent">#FF4081</color>
@@ -7,6 +8,17 @@
     <color name="color_itemtext">#ffffff</color>
     <color name="color_item">#80ffffff</color>
     <color name="text_change">#ffff00</color>
+    <color name="text_black">#323232</color>
+
+<!--
+   Stock Data Color Change Number
+-->
+    <color name="sign_plus">#009900</color>
+    <color name="sign_minus">#FF0000</color>
+    <color name="sign_equal">#FFFF00</color>
+
+
+
 
 
 </resources>

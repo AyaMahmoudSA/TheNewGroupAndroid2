@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_top">
+
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            >
+
+            <Button
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/drawer_bar"
+                android:id="@+id/title_bar_left_menu"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="Prices"
+                android:textSize="16sp"
+                android:textColor="@color/color_itemtext"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_refresh"
+                android:id="@+id/btn_refresh"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"/>
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="5dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/tabs"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/tab_desgin"
+            >
+
+
+            <Button
+                style="@style/MyCustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:text="@string/tab_preferred"
+                android:id="@+id/btn_preferred"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+
+                />
+
+            <Button
+                style="@style/MyCustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:text="@string/tab_active"
+                android:id="@+id/btn_active"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+
+                />
+
+            <Button
+                style="@style/MyCustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:text="@string/tab_gainers"
+                android:id="@+id/btn_gainers"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                />
+
+            <Button
+                style="@style/MyCustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:text="@string/tab_losers"
+                android:id="@+id/btn_losers"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginRight="11dp"
+                android:layout_marginTop="3dp"
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+<include layout="@layout/header"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:id="@+id/main_fragment">
+
+
+    </FrameLayout>
+
+</LinearLayout>

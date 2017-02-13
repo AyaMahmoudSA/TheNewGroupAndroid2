@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.av.thegroup.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#9e0e30">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/imageView2"
+                android:src="@drawable/ic_app_laucher"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/login_name"
+                android:textColor="@color/color_itemtext"
+                android:gravity="center"
+                android:id="@+id/textView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+
+            <EditText
+                android:id="@+id/txt_InverstorNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:inputType="textPersonName"
+                android:hint="@string/user_name"
+                android:textColorHint="@drawable/selector"
+                android:ems="10"
+                android:backgroundTint="@color/color_itemtext"
+                android:maxLines="1"
+                android:singleLine="true"
+                />
+
+            <EditText
+                android:id="@+id/txt_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:hint="@string/password"
+                android:textColorHint="@drawable/selector"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:backgroundTint="@color/color_itemtext"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp">
+
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_login"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:src="@drawable/ic_rightarrow"
+                app:cb_color="#4c0000"
+                app:cb_pressedRingWidth="8dip"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#6e0000" >
+
+        </View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_print"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/color_itemtext"
+            android:id="@+id/txt_print" />
+
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp">
+
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_fingerprint"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:src="@drawable/ic_touch"
+                app:cb_color="#9e0e30"
+                android:background="@drawable/gradient"
+                app:cb_pressedRingWidth="8dip"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
-
+<!--
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -13,7 +13,10 @@
         <include layout="@layout/header"
             />
 
-    </LinearLayout>
+    </LinearLayout>-->
+
+    <include layout="@layout/header"
+        android:id="@+id/header"/>
 
     <ListView
         android:layout_width="match_parent"
@@ -21,7 +24,13 @@
         android:id="@+id/list_perferred"
         android:dividerHeight="1dp"
         android:layout_weight="0.58"
-         >
-        </ListView>
+         />
+
+    <include layout="@layout/footer"
+        />
+  <!--  <include layout="@layout/footer"
+      />-->
+
+
 
 </LinearLayout>

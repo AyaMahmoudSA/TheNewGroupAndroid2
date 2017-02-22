@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.av.thegroup.AllStockData;
 import com.google.gson.JsonParser;
 
 
@@ -47,7 +48,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import Models.AllStockData;
 import StoreData.StoreData;
 
 /**

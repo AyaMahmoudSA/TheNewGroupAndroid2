@@ -1,7 +1,6 @@
 package com.av.thegroup;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -48,23 +47,147 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         setContentView(R.layout.activity_main);
 
 
-
         PERFERRED=(Button)findViewById(R.id.btn_preferred);
-        ACTIVE=(Button)findViewById(R.id.btn_active);
-        GAINERS=(Button)findViewById(R.id.btn_gainers);
-        LOSERS=(Button)findViewById(R.id.btn_losers);
 
+        changeFragmentForButton(new PerferredFragment() );
+/*
 
         PERFERRED.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             changeFragment(new PerferredFragment());
             }
         });
+*/
+
+      /*  PERFERRED=(Button)findViewById(R.id.btn_preferred);
+        ACTIVE=(Button)findViewById(R.id.btn_active);
+        GAINERS=(Button)findViewById(R.id.btn_gainers);
+        LOSERS=(Button)findViewById(R.id.btn_losers);
+
+        //PERFERRED.setSelected(true);
+        PERFERRED.setBackgroundDrawable(getResources().getDrawable(R.drawable.leftside));
+        PERFERRED.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+
+        PERFERRED.setOnClickListener(this);
+        GAINERS.setOnClickListener(this);
+        LOSERS.setOnClickListener(this);
+        ACTIVE.setOnClickListener(this);*/
+
+       // changeFragmentForButton(new PerferredFragment());
+
+        //once Open that screen set checked2
+        /*if( savedInstanceState == null ) {
+           changeFragment(new PerferredFragment());
+       }*/
+/*
+
+        PERFERRED.setOnClickListener(this);
+        GAINERS.setOnClickListener(this);
+        LOSERS.setOnClickListener(this);
+        ACTIVE.setOnClickListener(this);
+*/
+
+
+        //  PERFERRED.setOnClickListener(this);
+
+
+   /*     PERFERRED.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PERFERRED.setBackgroundDrawable(getResources().getDrawable(R.drawable.leftside));
+                PERFERRED.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                changeFragmentForButton(new PerferredFragment());
+
+            }
+        });
+
+        ACTIVE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ACTIVE.setBackgroundDrawable(getResources().getDrawable(R.drawable.center));
+                ACTIVE.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                changeFragmentForButton(new PerferredFragment());
+
+
+            }
+        });
+
+        GAINERS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GAINERS.setBackgroundDrawable(getResources().getDrawable(R.drawable.center));
+                GAINERS.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                changeFragmentForButton(new PerferredFragment());
+
+
+            }
+        });
+
+        LOSERS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LOSERS.setBackgroundDrawable(getResources().getDrawable(R.drawable.rightside));
+                LOSERS.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                changeFragmentForButton(new PerferredFragment());
+            }
+        });*/
+
 
         mContext = this;
         setUpMenu();
 
+
+
+
+    }
+
+    /*@Override
+    public void onClick(View v) {
+        // TODO Auto-generated method stub
+        setdefault();
+                changeFragment(new PerferredFragment() );
+
+        switch (v.getId()) {
+
+            case R.id.btn_preferred:
+                PERFERRED.setBackgroundDrawable(getResources().getDrawable(R.drawable.leftside));
+                PERFERRED.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+             //   changeFragmentForButton(new PerferredFragment());
+                break;
+
+            case R.id.btn_active:
+                ACTIVE.setBackgroundDrawable(getResources().getDrawable(R.drawable.center));
+                ACTIVE.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                break;
+            case R.id.btn_gainers:
+                GAINERS.setBackgroundDrawable(getResources().getDrawable(R.drawable.center));
+                GAINERS.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                break;
+            case R.id.btn_losers:
+                LOSERS.setBackgroundDrawable(getResources().getDrawable(R.drawable.rightside));
+                LOSERS.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                break;
+
+
+        }
+    }
+*/
+
+    public  void setdefault(){
+
+        PERFERRED.setBackgroundDrawable(getResources().getDrawable(R.color.colorPrimaryDark));
+        PERFERRED.setTextColor(getResources().getColor(R.color.color_itemtext));
+
+        ACTIVE.setBackgroundDrawable(getResources().getDrawable(R.color.colorPrimaryDark));
+        ACTIVE.setTextColor(getResources().getColor(R.color.color_itemtext));
+
+
+        GAINERS.setBackgroundDrawable(getResources().getDrawable(R.color.colorPrimaryDark));
+        GAINERS.setTextColor(getResources().getColor(R.color.color_itemtext));
+
+
+        LOSERS.setBackgroundDrawable(getResources().getDrawable(R.color.colorPrimaryDark));
+        LOSERS.setTextColor(getResources().getColor(R.color.color_itemtext));
 
     }
 
@@ -157,12 +280,18 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
 
     private void changeFragment(Fragment targetFragment){
-        resideMenu.clearIgnoredViewList();
+     resideMenu.clearIgnoredViewList();
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.main_fragment, targetFragment, "fragment")
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
+
+
+
+
+
+
     }
 
     // What good method is to access resideMenu？
@@ -189,6 +318,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
 
+    private void changeFragmentForButton(Fragment targetFragment){
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_fragment, targetFragment, "fragment")
+                .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .commit();
+    }
 
 
 

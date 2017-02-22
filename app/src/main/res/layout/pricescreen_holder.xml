@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="7dp"
+            android:layout_marginLeft="3dp"
 
             />
 
@@ -32,7 +32,7 @@
             android:text="@string/value"
             android:maxLines="2"
             android:id="@+id/txt_valuepercentage"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
             android:layout_alignTop="@+id/txt_company"
             android:layout_toRightOf="@+id/txt_company"
             android:layout_toEndOf="@+id/txt_company"
@@ -40,7 +40,7 @@
 
         <TextView
             style="@style/CustomheaderText"
-            android:layout_width="30dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/bid"
@@ -48,7 +48,7 @@
             android:layout_alignTop="@+id/txt_valuepercentage"
             android:layout_toRightOf="@+id/txt_valuepercentage"
             android:layout_toEndOf="@+id/txt_valuepercentage"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
             android:textColor="@color/text_black"/>
 
         <TextView
@@ -61,7 +61,7 @@
             android:layout_alignTop="@+id/txt_bid"
             android:layout_toRightOf="@+id/txt_bid"
             android:layout_toEndOf="@+id/txt_bid"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
             android:textColor="@color/text_black"/>
 
         <TextView
@@ -74,7 +74,7 @@
             android:layout_alignTop="@+id/txt_offer"
             android:layout_toRightOf="@+id/txt_offer"
             android:layout_toEndOf="@+id/txt_offer"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="25dp"
             android:textColor="@color/text_black"/>
     </RelativeLayout>
 

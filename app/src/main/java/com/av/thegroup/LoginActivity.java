@@ -19,6 +19,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.firebase.client.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -56,32 +62,34 @@ public class LoginActivity extends AppCompatActivity {
         txt_Password=(EditText)findViewById(R.id.txt_Password);
 
         txt_InverstorNo.setText("209037");
+        txt_InverstorNo.setTextColor(getResources().getColor(R.color.color_itemtext));
+
         txt_Password.setText("12345");
-
-/*if(App.Tag_Login==0){
-
-}else{
-    txt_InverstorNo.setText(new StoreData().LoadInverstorNumber().toString());
-    txt_Password.setText(new StoreData().LoadPassword().toString());
-
-}*/
-
-        /*String m=new StoreData().LoadInverstorNumber().toString();
-        String y=new StoreData().LoadPassword();
-
-       if(new StoreData().LoadInverstorNumber().toString()==""||new StoreData().LoadInverstorNumber().toString()==""){
-*//*
-            //do nothings
-        }else{
-            // here to save data once i enter so not enter username or password every time
-
-
-        }*//*
-
-*/
+        txt_Password.setTextColor(getResources().getColor(R.color.color_itemtext));
 
         Login_In=(CircleButton)findViewById(R.id.btn_login);
 
+
+       /* FirebaseDatabase database= FirebaseDatabase.getInstance();
+        myRef = database.getReference();
+        //myRef = myRef.child("Market_Data");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                String test=  dataSnapshot.child("Market_Data").child("ChangePercentage").getValue(String.class);
+
+                //dataSnapshot.toString();
+                txt_InverstorNo.setText(test);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });*/
 
 
         Login_In.setOnClickListener(new View.OnClickListener() {

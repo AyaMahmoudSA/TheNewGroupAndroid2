@@ -89,7 +89,7 @@ public class PerferredStockDataAdapter extends BaseAdapter {
             holder = new MyViewHoldwer(convertView);
             convertView.setTag(holder);
             Log.d("row", "Creating row");
-            
+
         } else {
             holder = (MyViewHoldwer) convertView.getTag();
             Log.d("row", "Recycling use");
